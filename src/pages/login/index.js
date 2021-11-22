@@ -92,7 +92,11 @@ function Login() {
                                 </div>
                                 <div onClick={() => {
                                     if (!(!email || !password)) {
-                                        handleLlogin()
+                                        if(password.length>5){
+                                            handleLlogin()
+                                        }else{
+                                            NotificationManager.warning('Sua senha tem que ter no minimo 6 carateres');
+                                        }
                                     } else {
                                         NotificationManager.warning('Você esqeuceu da senha ou do email');
                                     }
