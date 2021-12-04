@@ -16,7 +16,7 @@ height: 24rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-left: 5%;
+    margin-left: 0%;
 }
 
 .chatImput {
@@ -33,7 +33,10 @@ height: 24rem;
     border: 1px solid #cccccc;
     border-radius: 10%;
     padding: 5px;
-    margin-top: 2%;
+    margin-left: 1%;
+    height: 53%;
+    margin-top: 8%;
+    
 }
 .img:hover{
     border: 1.5px solid black;
@@ -63,6 +66,18 @@ height: 24rem;
     margin: 2% 37% 0% 3%;
     text-align: left;
 
+}
+.meimg{
+    border-top-right-radius: 4em;
+    border-top-left-radius: 4em;
+    border-bottom-left-radius: 4em;
+   
+
+}
+.theyimg{
+    border-top-right-radius: 4em;
+    border-top-left-radius: 4em;
+    border-bottom-right-radius: 4em;
 }
 .they .autor-tempo{
     text-align: left;
