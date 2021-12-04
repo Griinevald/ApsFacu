@@ -70,9 +70,9 @@ function Chat() {
         const unsub = onSnapshot(query(collection(db, "mensagens"), where("hora", ">=", new Date()))
             , (querySnapshot) => {
                 let tmp = [];
-
+                let autor
                 querySnapshot.forEach(async (document) => {
-                    let autor = document.data().autor === user.email ? "me" : "they"
+                    autor = document.data().autor === user.email ? "me" : "they"
                     let time = new Date(document.data().hora * 1000);
                     tmp.push({
                         id: document.id,
@@ -81,12 +81,13 @@ function Chat() {
                         time: time.getHours() + ":" + time.getMinutes(),
                         ...document.data()
                     })
+
                 })
-                if (messages.length > 0) {
+
+                if (messages.length > 0 && autor != "me") {
                     var audio = new Audio(notificacao)
                     audio.play();
                 }
-
                 setMessages(tmp)
             });
         return () => {
