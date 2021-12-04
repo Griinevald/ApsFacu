@@ -82,8 +82,11 @@ function Chat() {
                         ...document.data()
                     })
                 })
-                var audio = new Audio(notificacao)
-                audio.play();
+                if (messages.length > 0) {
+                    var audio = new Audio(notificacao)
+                    audio.play();
+                }
+
                 setMessages(tmp)
             });
         return () => {
